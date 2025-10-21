@@ -1,0 +1,425 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    color: #ffecec;
+    position: relative;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.container h2 {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 50px;
+    font-size: 2.5em;
+    margin: 60px 0 40px 0;
+    box-shadow: 0 8px 20px rgba(240, 147, 251, 0.4);
+    text-align: center;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.container hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    margin: 60px 0;
+}
+
+.site-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255, 228, 225, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.main-nav-left {
+    color: #764ba2;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav-right {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav-right a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.main-nav-right a:hover {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.stars-container,
+.floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+.shooting-star {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    animation: shoot 3s linear infinite;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+.hero {
+    position: relative;
+    z-index: 10;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    min-height: 100vh;
+    color: white;
+    padding: 50px 20px;
+}
+
+.text-section {
+    max-width: 600px;
+    text-align: left;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.text-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: glow 2s ease-in-out infinite;
+    line-height: 1.2;
+}
+
+.text-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #ffd4e5;
+}
+
+.text-section p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    opacity: 0.95;
+    text-align: justify;
+}
+
+.avatar {
+    width: 300px;
+    height: 400px;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+    object-fit: cover;
+    animation: float-img 3s ease-in-out infinite;
+}
+
+.skills-bars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 40px 0;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.skill-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skill-name {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-percent {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffd4e5;
+}
+
+.skill-bar-bg {
+    width: 100%;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.skill-bar {
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px currentColor;
+    animation: fillBar 2s ease-out;
+    transition: width 1s ease;
+}
+
+.projects-list {
+    list-style: none;
+    display: grid;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.projects-list li {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border-left: 5px solid #f093fb;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease-out;
+}
+
+.projects-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 12px 30px rgba(240, 147, 251, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.projects-list strong {
+    display: block;
+    font-size: 1.5em;
+    color: #ffd4e5;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.projects-list li::before {
+    content: "🚀";
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+.container p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border-left: 4px solid #f093fb;
+    transition: all 0.3s ease;
+}
+
+.container p:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.site-footer {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 80px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.site-footer p {
+    font-size: 1.1em;
+    color: #ffd4e5;
+    background: none;
+    border: none;
+    margin: 0;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(1000px) translateY(500px);
+        opacity: 0;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-50px) translateX(30px);
+    }
+}
+
+@keyframes float-img {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .skills-bars {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        gap: 40px;
+        padding: 30px 15px;
+    }
+    
+    .text-section h1 {
+        font-size: 2.5em;
+    }
+    
+    .main-nav-left {
+        font-size: 24px;
+    }
+    
+    .main-nav-right {
+        gap: 15px;
+    }
+    
+    .main-nav-right a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    .avatar {
+        width: 250px;
+        height: 330px;
+    }
+    
+    .container h2 {
+        font-size: 1.8em;
+        padding: 12px 30px;
+    }
+    
+    .skills-bars {
+        padding: 20px;
+    }
+    
+    .site-header {
+        padding: 15px 20px;
+    }
+}

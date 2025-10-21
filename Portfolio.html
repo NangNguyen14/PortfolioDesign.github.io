@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio - Nguyễn Trí Năng</title>
+  <link rel="stylesheet" href="Portfolio.css">
+</head>
+<body>
+    <div class="stars-container" id="starsContainer"></div>
+    <div class="floating-particles" id="particlesContainer"></div>
+    <script>
+        const starsContainer = document.getElementById('starsContainer');
+        const particlesContainer = document.getElementById('particlesContainer');
+
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            const size = Math.random() * 3 + 1;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            starsContainer.appendChild(star);
+        }
+
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            const size = Math.random() * 6 + 2;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 6 + 's';
+            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+  <header class="site-header">
+      <div class="main-nav-left">Portfolio</div>
+      <nav class="main-nav-right">
+        <a href="#about">Giới thiệu</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+  </header>
+
+  <section id="hero" class="hero">
+    <div id="about" class="container">
+        <div class="content">
+            <div class="text-section">
+                <h1>Xin chào, Tôi là</h1>
+                <h1>Nguyễn Trí Năng</h1>
+                <h3>Frontend Developer & UI/UX Designer</h3>
+                <p> Sinh viên Ngành Công nghệ thông tin. Tôi yêu thích lập trình, muốn tìm kiếm những thứ mới mẻ. Hiện tại đang hướng đến Full-stack Developer</p>
+            </div>
+                <img src="images/avatar.jpg" alt="Nguyễn Trí Năng" class="avatar">
+            </div>
+        <hr>
+
+        <h2 id="skills">Skill</h2>
+        <div class="skills-bars">
+          <div class="skill-row">
+            <span class="skill-name">HTML/CSS</span>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" style="width:95%;background:#2563eb"></div>
+            </div>
+            <span class="skill-percent">95%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" style="width:90%;background:#eab308"></div>
+            </div>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">React</span>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" style="width:85%;background:#0891b2"></div>
+            </div>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">UI/UX Design</span>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" style="width:88%;background:#a21caf"></div>
+            </div>
+            <span class="skill-percent">88%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Node.js</span>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" style="width:80%;background:#22c55e"></div>
+            </div>
+            <span class="skill-percent">80%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Figma</span>
+            <div class="skill-bar-bg">
+              <div class="skill-bar" style="width:92%;background:#db2777"></div>
+            </div>
+            <span class="skill-percent">92%</span>
+          </div>
+        </div>
+        <h2 id="projects">Projects</h2>
+        <ul class="projects-list">
+          <li>
+            <strong>Portfolio Website</strong> Trang web cá nhân được xây dựng bằng HTML, CSS và JavaScript, nhằm giới thiệu kỹ năng, dự án và thông tin nghề nghiệp của tôi.
+          </li>
+          <li>
+            <strong>Website Lớp học trực tuyến</strong> Ứng dụng quản lý Lớp học hỗ trợ tạo, sửa, xóa nhiệm vụ học tập.
+          </li>
+          <li>
+            <strong>Website Quản lý bảo dưỡng xe</strong> Nền tảng blog được phát triển bằng Java, tích hợp chức năng đăng nhập người dùng và thao tác CRUD để quản lý nội dung bảo dưỡng xe.
+          </li>
+        </ul>
+        <h2 id="contact">Contact Me</h2>
+        <p>Email: nguyentrinang2005@gmail.com</p>
+        <p>Số điện thoại: 0983266131</p>
+        <p>Địa chỉ: Quận Bình Thạnh, TP.HCM</p>
+        <p>Facebook: https://www.facebook.com/nang.nguyen.743388</p>
+        <p>Github: https://github.com/NangNguyen14</p>
+    </div>
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 Nguyễn Trí Năng. Học, học nữa, học mãi.</p>
+      </div>
+    </section>     
+</html>
